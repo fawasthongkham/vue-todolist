@@ -57,7 +57,7 @@
       </button> -->
       <ButtonComponent
         v-if="isEmptyTasks()"
-        @click="toggleBlueButton"
+        @click="selectAllTasks"
         buttonName="Select All"
         btnColor="success"
       />
@@ -132,10 +132,10 @@ const deleteAllTasks = () => {
   tasks.value = []
 }
 
-// const selectAllTasks = () => {
-//   const allCompleted = tasks.value.every((task) => task.completed)
-//   tasks.value.forEach((task) => (task.completed = !allCompleted))
-// }
+const selectAllTasks = () => {
+  const allCompleted = tasks.value.every((task) => task.completed)
+  tasks.value.forEach((task) => (task.completed = !allCompleted))
+}
 
 const toggleBlueButton = () => {
   showBlueButton.value = !showBlueButton.value
