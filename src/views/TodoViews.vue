@@ -1,12 +1,12 @@
 <template>
   <div :class="'avatar flex justify-center items-center'">
-    <div class="w-24 rounded-full">
-      <img src="../assets/gif/wired-lineal-17-avatar-man-nodding.gif" />
+    <div class="w-48 rounded-full">
+      <img src="../assets/gif/a.gif" />
     </div>
   </div>
 
   <div class="max-w-md mx-auto mt-10 text-center">
-    <h1 class="text-2xl font-semibold mb-4">To-Do List {{ newTask }}</h1>
+    <h1 class="text-2xl font-semibold mb-4">To-Do List</h1>
     <div class="flex space-x-2">
       <input
         v-model="newTask"
@@ -24,9 +24,7 @@
     </div>
 
     <div v-for="(task, index) in tasks" :key="index">
-      <div v-if="task.completed">
-        {{ task.text }}
-      </div>
+      <div v-if="task.completed"></div>
     </div>
 
     <ul class="mt-4">
@@ -37,7 +35,7 @@
         :class="{ 'bg-green-500': task.completed, 'bg-red-500': !task.completed }"
       >
         <input type="checkbox" class="mr-2" v-model="task.completed" />
-        <span :class="{ 'line-through': task.completed }">{{ task.text }}</span>
+        <span :class="{ 'line-through': task.completed }"></span>
         <span class="text-gray-500 text-sm">{{ task.timestamp }}</span>
         <button
           @click="removeTask(index)"
@@ -77,7 +75,7 @@
       <button
         @click="deleteAllTasks"
         v-show="tasks.length > 0"
-        class="px-4 py-[100px] text-white bg-[#42de1b] rounded-md hover:bg-red-600"
+        class="px-4 py-[10px] text-white bg-[#42de1b] rounded-md hover:bg-red-600"
       >
         Delete All
       </button>
